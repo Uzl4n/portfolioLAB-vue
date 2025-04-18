@@ -1,0 +1,35 @@
+nav{
+
+    position: fixed;
+     
+ }
+
+ .header h1{  
+    color: black;
+	text-align: center;
+    margin-left: 300px;
+    margin-right: 200px;
+	padding-bottom: 10px;
+	font-size: 50px; 
+}
+
+.header  {      
+    text-align: center;	 
+}
+
+.btn-neu {
+    background: linear-gradient(135deg, #6e8efb, rgb(41,70,76));
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .btn-neu:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);;
+  }

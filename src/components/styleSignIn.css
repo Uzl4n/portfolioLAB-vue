@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn-primary{
+    margin-top: 200px;
+    margin-left: -399px;
+    
+}
+
+.btn-danger{
+    margin-top: 200px;
+    margin-left: -290px;
+}
+
+label{
+    margin: 15px;
+}
+
+#login{
+    
+    background-color:  rgb(41,70,76);
+    color: white;
+   
+    position: fixed;
+   
+    margin-left: 4%;
+    margin-right: auto;
+   
+    padding-left: 80px;
+    padding-right: 80px;
+   
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-radius: 10px; 
+   
+   }
+
+body{
+
+    height: 100vh;
+    width: 160vh;
+    background-image: url('../assets/layoutBlue.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.socialSign{
+    color: white;
+    text-align: center;
+    background-image: url('../assets/layoutBlue.jpg');
+    border-radius: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+
+.socialSign img{
+    max-width:60px;
+    max-height:140px;
+}
+
+.rodapeSign{
+    position: fixed;
+    margin-top: 750px;  
+}
