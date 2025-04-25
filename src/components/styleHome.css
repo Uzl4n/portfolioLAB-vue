@@ -1,0 +1,145 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.apresentacao__descricao {
+  width: 100%;
+  max-width: 600px;
+  font-size: 16px;
+  margin: 0 auto;
+  text-align: left; /* ou center se quiser o texto centralizado */
+}
+
+.position-left {
+  
+  width: 100%;
+  max-width: 600px;
+  font-size: 16px;
+  margin: 0 auto;
+  text-align: left; /* ou center se quiser o texto centralizado */
+}
+
+.position-right {
+  position: absolute;
+  right: 60px;
+  left: auto;
+  margin: -300px;
+  margin-right: 40px;
+}
+
+.socialHome{
+  color: white;
+  text-align: center;
+  background-image: url('../assets/layoutBlue.jpg');
+  border-radius: 600px;
+  
+}
+
+.socialHome img{
+  max-width:60px;
+  max-height:140px;
+  
+}
+
+.rodapeHome{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+
+
+/* Organizar o css de vez
+
+
+
+
+
+
+
+<div class="main-container">
+
+ <!-- Botões para alternar idioma -->
+ <div style="text-align: center; margin: 20px 0;">
+  <button class="language-button" @click="idioma = 'BR'">🇧🇷 Português</button>
+  <button class="language-button" @click="idioma = 'USA'">🇺🇸 English</button>
+</div>
+
+   
+
+                <div class="clear"></div>
+
+     <!-- Seção em Português -->
+     <section v-if="idioma === 'BR'" class="apresentacao__boxBR">
+      <div class="apresentacao__descricao">
+        <pre>🇧🇷</pre>
+        <p>Formado em Análise e Desenvolvimento de Sistemas pelo IFSUL - Instituto Federal Sul-rio-grandense (2021) Desenvolvimento De Games - Danki Code (2023)<br/></p>
+        <br/><br/><br/>
+        <p>Temas e ferramentas que fazem parte da minha rotina de trabalho;</p>
+        <p>  * Análise de documentações de arquitetura e padrões de projetos</p>
+        <p>  * Clean Code</p>
+        <p>  * Clean Architecture</p>
+        <p>  * SOLID</p>
+        <p>  * Git, GitHub, Firebase, SQL, NoSQL</p>
+        <p>  * Componentização e responsividade</p>
+        <p>  * Unity, Godot, GameMaker Studio, The Eclipse IDE, Unreal Engine, Construct.</p>
+        <br/><br/><br/>
+        <p>Atualmente me encontro no nível de Inglês intermediário, mas em transição para o avançado, no qual consigo ler, escrever e manter uma comunicação.</p>
+      </div>
+      <div class="clear"></div>
+    </section>
+
+    <!-- Seção em Inglês -->
+    <section v-if="idioma === 'USA'" class="apresentacao__boxUSA">
+      <div class="apresentacao__descricao">
+        <pre>🇺🇸</pre>
+        <p>Graduated in Systems Analysis and Development from IFSUL - Instituto Federal Sul-rio-grandense (2021) Game Development - Danki Code (2023)<br/></p> 
+        <br/><br/><br/>
+        <p>Themes and tools that are part of my work routine;</p>
+        <p>   * Analysis of architecture documentation and design standards</p>
+        <p>   * CleanCode</p>
+        <p>   * CleanArchitecture</p>
+        <p>   * SOLID</p>
+        <p>   * Git, GitHub, Firebase, SQL, NoSQL</p>
+        <p>   * Componentization and responsiveness</p>
+        <p>   * Unity, Godot, GameMaker Studio, The Eclipse IDE, Unreal Engine, Construct.</p>
+        <br/><br/><br/>
+        <p>I am currently at an intermediate level of English, but transitioning to advanced, where I can read, write and maintain communication.</p>
+      </div>
+      <div class="clear"></div>
+    </section>
+
+      
+  
+    <footer class="rodapeHome">
+  <div class="socialHome">
+    <div class="social-icons">
+      <a href="https://github.com/Uzl4n">
+        <img src="../assets/GitHub.png" alt="GitHub" />
+      </a>
+      <a href="https://www.linkedin.com/in/luan-antunes-barbosa-a228b9214/">
+        <img src="../assets/linked.png" alt="LinkedIn" />
+      </a>
+      <a href="https://zl4n.itch.io/">
+        <img src="../assets/itch.io.png" alt="Itch.io" />
+      </a>
+    </div>
+    <p>&copy; 2024 - Todos os direitos reservados</p>
+    <p>Entre em contato pelo e-mail: hastaluego6236@gmail.com</p>
+  </div>
+</footer>     
+</div>
+
+
+
+
+*/
+
+

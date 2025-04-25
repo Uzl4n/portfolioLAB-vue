@@ -1,35 +1,44 @@
-nav{
+nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%; /* Faz o nav ocupar toda a largura da tela */
+  text-align: center;
+}
 
-    position: fixed;
-     
- }
-
- .header h1{  
-    color: black;
-	text-align: center;
-    margin-left: 300px;
-    margin-right: 200px;
-	padding-bottom: 10px;
-	font-size: 50px; 
+.header h1 {
+  color: black;
+  font-size: 50px;
+  
 }
 
 .header  {      
-    text-align: center;	 
+  text-align: center;	 
 }
 
 .btn-neu {
-    background: linear-gradient(135deg, #6e8efb, rgb(41,70,76));
-    border: none;
-    color: white;
-    padding: 10px 22px;
-    font-size: 16px;
-    border-radius: 8px;
-    margin: 5px;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .btn-neu:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);;
-  }
+  background: linear-gradient(135deg, #6e8efb, rgb(41,70,76));
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-neu:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+.custom-label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}

@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.socialFeed{
+    color: white;
+    text-align: center;
+    background-image: url('../assets/layoutBlue.jpg');
+    border-radius: 600px;
+    
+}
+
+.socialFeed img{
+    max-width:60px;
+    max-height:140px;
+    
+}
+
+.rodapeFeed{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    padding-left: 45px;
+    padding-right: 45px;
+}

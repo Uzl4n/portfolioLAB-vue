@@ -22,9 +22,10 @@ body{
     color: white;
    
     position: fixed;
-   
-    margin-left: 4%;
-    margin-right: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
    
     padding-left: 80px;
     padding-right: 80px;
@@ -33,12 +34,6 @@ body{
     justify-content:center;
     align-items: center;
     border-radius: 10px; 
-
-
-   
-   
-    
-   
 }
 
 #backgroundR{
@@ -66,12 +61,8 @@ body{
     text-align: center;
     background-image: url('../assets/layoutBlue.jpg');
     border-radius: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding-left: 55px;
-    padding-right: 55px;
 }
+
 
 .socialRegister img{
     max-width:60px;
@@ -80,5 +71,11 @@ body{
 
 .rodapeRegister{
     position: fixed;
-    margin-top: 750px;  
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    padding-left: 45px;
+    padding-right: 45px; 
 }
