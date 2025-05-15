@@ -14,25 +14,26 @@
 
 .position-left {
   
-  width: 100%;
-  max-width: 600px;
-  font-size: 16px;
-  margin: 0 auto;
-  text-align: left; /* ou center se quiser o texto centralizado */
+  position: absolute;
+  left: 500px;
+  bottom: 470px;
+  right: auto;
+  margin: -314px;
+  margin-right: 900px;
 }
 
 .position-right {
   position: absolute;
   right: 60px;
   left: auto;
-  margin: -300px;
+  margin: -315px;
   margin-right: 40px;
 }
 
 .socialHome{
   color: white;
   text-align: center;
-  background-image: url('../assets/layoutBlue.jpg');
+  background-image: url('../assets/layoutSocial.avif');
   border-radius: 600px;
   
 }

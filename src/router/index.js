@@ -17,6 +17,7 @@ const router = createRouter({
     ],
 });
 
+/* Arrumar o Feed primeiro depois ok!
 
 const getCurrentUser = () => {
     return new Promise((resolve, reject) => {
@@ -46,7 +47,7 @@ router.beforeEach(async (to, from, next) => {
         next(); // deixa passar rotas públicas
     }
 });
-
+  */
 
 
 export default router;

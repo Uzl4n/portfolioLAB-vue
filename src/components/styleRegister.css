@@ -8,7 +8,7 @@ body{
    
     height: 100vh;
     width: 160vh;
-    background-image: url('../assets/layoutRed.jpg');
+    background-image: url('../assets/layout.avif');
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +59,7 @@ body{
 .socialRegister{
     color: white;
     text-align: center;
-    background-image: url('../assets/layoutBlue.jpg');
+    background-image: url('../assets/layoutSocial.avif');
     border-radius: 600px;
 }
 

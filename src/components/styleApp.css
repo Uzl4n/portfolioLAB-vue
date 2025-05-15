@@ -1,3 +1,17 @@
+/* Fixar o header */
+.header {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Faz o header ocupar toda a largura da tela */
+  z-index: 1000; /* Garante que o header fique acima de outros conteúdos */
+  padding: 10px 0; /* Adiciona espaçamento interno */
+  
+}
+
+
 nav {
   position: fixed;
   top: 0;
@@ -10,12 +24,8 @@ nav {
 
 .header h1 {
   color: black;
-  font-size: 50px;
-  
-}
-
-.header  {      
-  text-align: center;	 
+  font-size: 50px; /* Ajuste no tamanho para ser responsivo */
+  margin: 0;
 }
 
 .btn-neu {
@@ -35,7 +45,7 @@ nav {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 
 .custom-label {
     font-family: 'Raleway', sans-serif;

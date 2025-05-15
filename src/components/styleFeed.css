@@ -4,6 +4,31 @@
     box-sizing: border-box;
 }
 
+
+.posts-section {
+  padding-top: 80px; /* Deixe um espaço para o título fixo */
+  padding-bottom: 60px; /* Deixe um espaço para o rodapé fixo */
+}
+
+#br {
+  font-size: 1.5rem; /* Ajuste o tamanho da fonte */
+  padding: 0.5rem 1rem; /* Reduza o preenchimento */
+  border-radius: 20px; /* Adiciona bordas arredondadas */
+  background-color: #007bff; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  border: none; /* Remove a borda */
+  cursor: pointer; /* Altera o cursor para indicar que é clicável */
+  transition: background-color 0.3s ease; /* Efeito de transição para o fundo */
+  position: fixed; /* Posiciona de forma fixa */
+  top: 100px; /* Distância do topo */
+  left: 20px; /* Distância da esquerda */
+  z-index: 10; /* Garante que o botão fique sobre outros elementos */
+}
+
+#br:hover {
+  background-color: #0056b3; /* Cor do fundo quando o botão for pressionado */
+}
+
 .socialFeed{
     color: white;
     text-align: center;
@@ -25,6 +50,6 @@
     transform: translateX(-50%);
     width: 100%;
     text-align: center;
-    padding-left: 45px;
-    padding-right: 45px;
+     padding: 1px 2px;
+     z-index: 1; /* Ajuste para garantir que o rodapé fique abaixo do conteúdo */
 }

@@ -5,7 +5,7 @@ import { nextTick } from 'vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 
-const showBR  = ref(false);
+const showBR  = ref(true);
 const showUSA = ref(false);
 
 const toggleBR  = async () => {
