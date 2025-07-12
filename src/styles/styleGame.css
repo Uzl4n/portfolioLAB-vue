@@ -1,0 +1,36 @@
+/* Container geral */
+.containerGamer {
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  justify-content: flex-start; /* Empurrar a tabela para a direita */
+}
+
+/* Container da tabela */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%; /* Garantir que a tabela ocupe 100% da largura */
+}
+
+/* Tabela */
+/* Tabela */
+table {
+  width: 100%; /* A tabela ocupa toda a largura disponível */
+  table-layout: auto;
+  margin-left: 240px; /* Pequeno ajuste para mover a tabela para a esquerda */
+}
+
+th, td {
+  text-align: center; /* Alinha texto no centro das células */
+  white-space: nowrap;
+}
+
+th {
+  font-size: 1.1rem; /* Aumenta o tamanho das fontes das colunas */
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6; /* Borda mais suave */
+}

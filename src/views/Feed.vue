@@ -1,138 +1,123 @@
 <script setup>
-
   import { ref } from 'vue';
   import { posts } from '../data/posts';
   import 'bootstrap/dist/css/bootstrap.min.css';
-    import 'bootstrap/dist/js/bootstrap.min.js';
-    
+  import 'bootstrap/dist/js/bootstrap.min.js';
+  import Header from "../components/Header.vue";
+  import Footer from "../components/Footer.vue";
 
-  const isPostUSA = ref(true); // Inicia exibindo a seção "postUSA"
-
-  
-
+const isPostUSA = ref(true); // Inicia exibindo a seção "postUSA"
 </script>
 
+
+
+<!--deve ficar no mesmo planto header e footer junto com home no caso eles estao em um acima --- ver essas linhas vermelhas ---- tirar um dos javas deixar so um!!-->
+
 <template>
+  
+    <Header />
     
+    
+    <section class="posts-section">
+  
+    <div id="carouselPosts" class="carousel slide">
+      
+      <!-- Indicadores (bolinhas) -->
+      <div class="carousel-indicators">
+        <button
+          v-for="(post, index) in posts"
+          :key="'ind-' + index"
+          type="button"
+          data-bs-target="#carouselPosts"
+          :data-bs-slide-to="index"
+          :class="{ active: index === 0 }"
+          :aria-current="index === 0 ? 'true' : undefined"
+          :aria-label="'Slide ' + (index + 1)">
+        </button>
+      </div>
 
-   <!-- Botão para alternar entre postUSA e postBR -->
-<button id="br" class="btn-neu" @click="isPostUSA = !isPostUSA">
-  {{ isPostUSA ? '🇧🇷' : '🇺🇸' }}
-</button>
+      <!-- Slides -->
+      <div class="carousel-inner">
+        <div
+          v-for="(post, index) in posts"
+          :key="'post-' + index"
+          class="carousel-item"
+          :class="{ active: index === 0 }"
+        >
+          <div class="post-card">
+            <h3>{{ post.titulo }}</h3>
+            <p><strong>Autor:</strong> {{ post.autor }} - <strong>Ano:</strong> {{ post.data }}</p>
+            <img
+              :src="post.imagem_post"
+              alt="Imagem do post"
+              style="max-width: 100%; height: auto"
+            />
+            <p>{{ post.texto }}</p>
+            <p v-if="post.texto2">{{ post.texto2 }}</p>
+            <iframe
+              v-if="post.video"
+              :src="post.video"
+              frameborder="0"
+              allowfullscreen
+              style="width: 100%; max-width: 560px; height: 315px; margin-top: 1rem"
+            ></iframe>
+          </div>
+        </div>
+      </div>
 
-  <!-- Seção Post USA -->
-  <section class="postUSA" v-if="isPostUSA">
-    <div class="center">
-      <h2 class="title">Professional Profile</h2>
-      <h5 class="subtitle">Some individualities about me.</h5>
-      <section class="icones">
-        <div class="box-wrapper">
-          <div class="box-icone">
-            <img src="../assets/icone-1.png" alt="">
-          </div>
-          <h6 class="box-icone__titulo">Work</h6>
-          <p class="box-icone__texto">Be ready to learn <br>every day!</p>
-        </div>
-        <div class="box-wrapper">
-          <div class="box-icone box-icone--red">
-            <img src="../assets/icone-2.png" alt="">
-          </div>
-          <h6 class="box-icone__titulo">Disposition</h6>
-          <p class="box-icone__texto">Develop my knowledge <br>and gain experience!</p>
-        </div>
-        <div class="box-wrapper">
-          <div class="box-icone">
-            <img src="../assets/icone-3.png" alt="">
-          </div>
-          <h6 class="box-icone__titulo">Team work</h6>
-          <p class="box-icone__texto">The individual is important <br>but knowing how to listen to<br> your team is essential!</p>
-        </div>
-        <div class="box-wrapper">
-          <div class="box-icone">
-            <img src="../assets/icone-4.png" alt="">
-          </div>
-          <h6 class="box-icone__titulo">Myself</h6>
-          <p class="box-icone__texto">Always looking to do <br>the bestI may not know all<br> the answers but I don't limit myself! </p>
-        </div>
-        <div class="clear"></div>
-      </section>
+      <!-- Controles -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselPosts"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselPosts"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
     </div>
-  </section>
-
-  <!-- Seção Post BR -->
-  <section class="postBR" v-if="!isPostUSA">
-    <div class="center">
-      <h2 class="title">Habilidades</h2>
-      <h5 class="subtitle">Algumas habilidades sobre mim.</h5>
-      <section class="icones">
-        <div class="box-wrapper">
-          <div class="box-icone">
-            <img src="../assets/icone-1.png" alt="">
-          </div>
-          <h6 class="box-icone__titulo">Trabalho</h6>
-          <p class="box-icone__texto">Estar pronto para aprender <br>todos os dias!</p>
-        </div>
-        <div class="box-wrapper">
-          <div class="box-icone box-icone--red">
-            <img src="../assets/icone-2.png" alt="">
-          </div>
-          <h6 class="box-icone__titulo">Disposição</h6>
-          <p class="box-icone__texto">Evoulir meus conhecimentos e <br>ganhar experiencia!</p>
-        </div>
-        <div class="box-wrapper">
-          <div class="box-icone">
-            <img src="../assets/icone-3.png" alt="">
-          </div>
-          <h6 class="box-icone__titulo">Trabalho em equipe</h6>
-          <p class="box-icone__texto">O individual é importante <br>mas saber escutar sua equipe é primordial!</p>
-        </div>
-        <div class="box-wrapper">
-          <div class="box-icone">
-            <img src="../assets/icone-4.png" alt="">
-          </div>
-          <h6 class="box-icone__titulo">Eu</h6>
-          <p class="box-icone__texto">Sempre a procura de fazer o melhor<br>posso não saber todas as respostas mas<br>não me limito!</p>
-        </div>
-        <div class="clear"></div>
-      </section>  
-    </div>
-  </section>
-
-
-
-  <!-- Lista de posts visível sempre -->
-<section class="posts-section" >
-  <div class="center">
-    <h2 class="title">Meus Posts</h2>
-    <div v-for="(post, index) in posts" :key="index" class="post-card">
-      <h3>{{ post.titulo }}</h3>
-      <p><strong>Autor:</strong> {{ post.autor }} - <strong>Ano:</strong> {{ post.data }}</p>
-      <img :src="post.imagem_post" alt="Imagem do post" style="max-width: 100%; height: auto;" />
-      <p>{{ post.texto }}</p>
-      <p v-if="post.texto2">{{ post.texto2 }}</p>
-      <iframe
-        v-if="post.video"
-        :src="post.video"
-        frameborder="0"
-        allowfullscreen
-        style="width: 100%; max-width: 560px; height: 315px; margin-top: 1rem;"
-      ></iframe>
-      <hr style="margin: 2rem 0;" />
-    </div>
-  </div>
+  
 </section>
 
+
+    <Footer />
   
-
-  <!-- Footer -->
-  <footer class="rodapeFeed">
-    <div class="socialFeed">
-      <a href="https://github.com/Uzl4n"> <img src = "../assets/GitHub.png"/></a>
-      <a href="https://www.linkedin.com/in/luan-antunes-barbosa-a228b9214/"><img src = "../assets/linked.png"/></a>
-      <a href="https://zl4n.itch.io/"><img src = "../assets/itch.io.png"/></a> 
-
-      <p>&copy; 2024 - Todos os direitos reservados</p>
-      <p>Entre em contato pelo e-mail: hastaluego6236@gmail.com</p>
-    </div>
-  </footer>  
 </template>
+
+
+<style>
+
+.posts-section {
+  display: flex;
+  justify-content: center; /* Centraliza o carrossel horizontalmente */
+  align-items: center; /* Centraliza o carrossel verticalmente */
+  min-height: 100vh; /* Garante que a altura mínima da seção ocupe toda a altura da tela */
+ 
+}
+
+#carouselPosts {
+  width: 80%; /* Ajuste conforme necessário */
+  max-width: 1200px; /* Limita o tamanho máximo para não ficar muito grande em telas grandes */
+  height: 500px; /* Ajuste a altura conforme necessário */
+  margin-left: 500px; /* Centraliza o carrossel no meio - ta no meio */ 
+}
+
+.carousel-inner {
+  height: 100%; /* Faz com que os itens do carrossel ocupem toda a altura */
+}
+
+.carousel-item img {
+  height: 100%; /* A imagem ocupa toda a altura do item */
+  object-fit: cover; /* Garante que a imagem cubra o item sem distorcer */
+}
+
+</style>

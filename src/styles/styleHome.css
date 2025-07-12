@@ -1,0 +1,157 @@
+/* A página inteira terá um estilo clean */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-container {
+  min-height: 100vh; /* Garantir que a página ocupe a altura completa da tela */
+  display: flex;
+  flex-direction: column;
+  
+}
+
+body {
+  background-image: url('../assets/layout.avif'); /* Caminho da sua imagem */
+  background-size: cover; /* Faz a imagem cobrir toda a tela */
+  background-position: center; /* Centraliza a imagem */
+  background-attachment: fixed; /* Fixa a imagem quando rolar a página */
+  background-repeat: no-repeat; /* Não repete a imagem */
+  height: 100%; /* Garantir que o body ocupe toda a altura */
+}
+
+header {
+  background-color: #333;
+  color: white;
+  position: fixed; /* Cabeçalho fixo no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  z-index: 10;
+}
+
+main {
+  flex-grow: 1;
+  padding-top: 80px; /* Espaço para o cabeçalho fixo */
+  text-align: center;
+  padding-bottom: 60px; /* Espaço para o rodapé fixo, se aplicável */
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  z-index: 10;
+}
+
+#br{
+    background: linear-gradient(135deg, #6e8efb, rgb(41,70,76));
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-neu:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);;
+}
+
+.postUSA {
+  background-image: url('../assets/layout.avif');
+  padding: 0.1rem 7rem 1rem; /* Ajustando o padding superior para reduzir o espaço */
+  border-radius: 8px;
+}
+
+/* Estilos para a seção de postagens */
+.postBR {
+  background-image: url('../assets/layout.avif');
+  padding: 0.1rem 7rem 1rem; /* Ajustando o padding superior para reduzir o espaço */
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Usando flexbox para alinhar os ícones em fila horizontal */
+.icones {
+  display: flex; /* Usando flexbox */
+  justify-content: flex-start; /* Alinha os ícones à esquerda */
+  gap: 30px; /* Espaçamento entre os ícones */
+  margin-top: 2rem; /* Espaço acima dos ícones */
+  flex-wrap: nowrap; /* Impede que os ícones quebrem para a linha de baixo */
+  overflow-x: auto; /* Permite o rolar horizontal se os ícones não caberem na tela */
+}
+
+/* Estilos para cada bloco de ícone */
+.box-wrapper {
+  text-align: center;
+  padding: 1rem;
+  background-image: url('../assets/layoutBlue.jpg');
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-width: 200px; /* Largura mínima para os ícones */
+  box-sizing: border-box;
+  flex-grow: 0; /* Impede que as caixas cresçam */
+}
+
+.box-icone__titulo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.box-icone__texto {
+  font-size: 1rem;
+  color: #070505;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .box-wrapper {
+    min-width: 48%; /* Ajustando a largura mínima para 2 por linha */
+    padding: 1rem;
+  }
+
+  .box-icone img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .icones {
+    gap: 20px; /* Ajustando o gap para telas pequenas */
+  }
+
+  .box-wrapper {
+    min-width: 100%; /* Um item por linha */
+  }
+
+  .box-icone img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+

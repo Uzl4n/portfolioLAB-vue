@@ -5,6 +5,8 @@
     import { useRouter } from "vue-router";
     import 'bootstrap/dist/css/bootstrap.min.css';
     import 'bootstrap/dist/js/bootstrap.min.js';
+    import Header from "../components/Header.vue";
+    import Footer from "../components/Footer.vue";
     
     
 
@@ -39,10 +41,15 @@
 
 </script>
 
+
+
+<!--deve ver o feed dps e arrumar a posicao dele igual no home com o seu conteudo --- ver essas linhas vermelhas-->
+
 <template>
 
-   
-    <div id="register">
+    <Header />
+    
+     <div id="register">
 
         <article>              
         <img src="../assets/Bg-R.jpg" width="260" height="205" id="backgroundR"> 
@@ -57,20 +64,6 @@
 
     </div>
 
-
-    <footer class="rodapeRegister">
-
-        <div class="socialRegister">
-
-            <a href="https://github.com/Uzl4n"> <img src = "../assets/GitHub.png"/></a>
-            <a href="https://www.linkedin.com/in/luan-antunes-barbosa-a228b9214/"><img src = "../assets/linked.png"/></a>
-            <a href="https://zl4n.itch.io/"><img src = "../assets/itch.io.png"/></a> 
-
-                <p>&copy; 2024 - Todos os direitos reservados</p>
-                <p>Entre em contato pelo e-mail: hastaluego6236@gmail.com</p>
-
-        </div>
-
-    </footer>
-     
+    <Footer />
+ 
 </template>

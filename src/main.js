@@ -2,10 +2,12 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router'  // Aqui você importa o arquivo de rotas corretamente
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { initializeApp } from "firebase/app";
 
+// Configuração do Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyBpcFNhRrywjv3U4l_kMa06sP5RbRrglik",
     authDomain: "portfolio-luan-antunes-barbosa.firebaseapp.com",
@@ -16,10 +18,9 @@ const firebaseConfig = {
     measurementId: "G-XBNH28R588"
 };
 
+// Inicializa o Firebase
 initializeApp(firebaseConfig);
 
-const app = createApp (App)
-
-app.use(router)
-
-app.mount('#app')
+const app = createApp(App);
+app.use(router);  // Usando o Vue Router para navegação
+app.mount('#app'); // Montando o App no DOM

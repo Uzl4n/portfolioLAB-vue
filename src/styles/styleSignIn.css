@@ -1,0 +1,41 @@
+
+#login{
+    
+    background-color:  rgb(41,70,76);
+    color: white;
+   
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    padding-left: 80px;
+    padding-right: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column; /* Alinha os itens verticalmente */
+  
+ 
+}
+
+#register img { 
+    opacity: 0.8; 
+}
+
+.btn-primary,
+.btn-danger {
+    width: 100%; /* Faz com que os botões ocupem toda a largura disponível */
+    margin-bottom: 10px; /* Adiciona espaço entre os botões */
+}
+
+
+
+
+
+
+
+

@@ -1,6 +1,8 @@
 <script setup>
 
     import { ref } from "vue";
+    import Header from "../components/Header.vue";
+    import Footer from "../components/Footer.vue";
     import 'bootstrap/dist/css/bootstrap.min.css';
     import 'bootstrap/dist/js/bootstrap.min.js';
     import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -56,11 +58,19 @@
 
 </script>
 
+
+
+<!--VER O FEED E COLOCAR BOTOES PARA OS 3 TRABALHOS DE VUE --- ver essas linhas vermelhas-->
+
 <template>
 
+    <Header />
+    
+        <div id="login">
 
-
-    <div id="login">
+            <article>              
+                <img src="../assets/Bg-L.jpg" id="backgroundL"> 
+            </article> 
 
             <label class="custom-label">Email</label>
             <p><input type="text" class="email" placeholder="seu@email.com" v-model="email"/></p>
@@ -72,24 +82,20 @@
             <p><button @click="signInWithGoogle" class="btn btn-danger">Sing In With Google</button></p>
 
 
-            <article>              
-                <img src="../assets/Bg-L.jpg" id="backgroundL"> 
-            </article>   
+              
     </div>
 
-    <footer class="rodapeSign">
-
-            <div class="socialSign">
-
-                    <a href="https://github.com/Uzl4n"> <img src = "../assets/GitHub.png"/></a>
-                    <a href="https://www.linkedin.com/in/luan-antunes-barbosa-a228b9214/"><img src = "../assets/linked.png"/></a>
-                    <a href="https://zl4n.itch.io/"><img src = "../assets/itch.io.png"/></a> 
-
-                    <p>&copy; 2024 - Todos os direitos reservados</p>
-                    <p>Entre em contato pelo e-mail: hastaluego6236@gmail.com</p>
-
-            </div>
-
-    </footer> 
-
+    <Footer />
+ 
 </template>
+
+
+<style scoped>
+.sign-in {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+</style>
