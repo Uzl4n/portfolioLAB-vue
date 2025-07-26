@@ -9,22 +9,22 @@
   min-height: 100vh; /* Garantir que a página ocupe a altura completa da tela */
   display: flex;
   flex-direction: column;
-  
+  position: relative;
 }
-
 body {
-  background-image: url('../assets/layout.avif'); /* Caminho da sua imagem */
-  background-size: cover; /* Faz a imagem cobrir toda a tela */
-  background-position: center; /* Centraliza a imagem */
-  background-attachment: fixed; /* Fixa a imagem quando rolar a página */
-  background-repeat: no-repeat; /* Não repete a imagem */
-  height: 100%; /* Garantir que o body ocupe toda a altura */
+  background-image: url('../assets/layout.avif');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
+/* Cabeçalho fixo no topo */
 header {
   background-color: #333;
   color: white;
-  position: fixed; /* Cabeçalho fixo no topo */
+  position: fixed; /* Fixo no topo */
   top: 0;
   left: 0;
   width: 100%;
@@ -32,17 +32,21 @@ header {
   z-index: 10;
 }
 
+
+/* Corpo da página */
 main {
+  margin-top: 80px; /* Deixa espaço suficiente para o header fixo */
+  margin-bottom: 80px; /* Deixa espaço suficiente para o footer fixo */
+  padding: 1rem;
+  overflow-y: auto; /* Permite rolar o conteúdo */
   flex-grow: 1;
-  padding-top: 80px; /* Espaço para o cabeçalho fixo */
-  text-align: center;
-  padding-bottom: 60px; /* Espaço para o rodapé fixo, se aplicável */
 }
 
+/* Rodapé fixo no fundo */
 footer {
   background-color: #333;
   color: white;
-  position: fixed;
+  position: fixed; /* Fixo no fundo */
   bottom: 0;
   left: 0;
   width: 100%;
@@ -51,8 +55,8 @@ footer {
   z-index: 10;
 }
 
-#br{
-    background: linear-gradient(135deg, #6e8efb, rgb(41,70,76));
+#br {
+  background: linear-gradient(135deg, #6e8efb, rgb(41,70,76));
   border: none;
   color: white;
   padding: 10px 22px;
@@ -65,19 +69,13 @@ footer {
 
 .btn-neu:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
-.postUSA {
-  background-image: url('../assets/layout.avif');
-  padding: 0.1rem 7rem 1rem; /* Ajustando o padding superior para reduzir o espaço */
-  border-radius: 8px;
-}
-
-/* Estilos para a seção de postagens */
+.postUSA,
 .postBR {
   background-image: url('../assets/layout.avif');
-  padding: 0.1rem 7rem 1rem; /* Ajustando o padding superior para reduzir o espaço */
+  padding: 0.1rem 7rem 1rem;
   border-radius: 8px;
 }
 
@@ -93,26 +91,24 @@ footer {
   margin-bottom: 2rem;
 }
 
-/* Usando flexbox para alinhar os ícones em fila horizontal */
 .icones {
-  display: flex; /* Usando flexbox */
-  justify-content: flex-start; /* Alinha os ícones à esquerda */
-  gap: 30px; /* Espaçamento entre os ícones */
-  margin-top: 2rem; /* Espaço acima dos ícones */
-  flex-wrap: nowrap; /* Impede que os ícones quebrem para a linha de baixo */
-  overflow-x: auto; /* Permite o rolar horizontal se os ícones não caberem na tela */
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  margin-top: 2rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
-/* Estilos para cada bloco de ícone */
 .box-wrapper {
   text-align: center;
   padding: 1rem;
   background-image: url('../assets/layoutBlue.jpg');
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  min-width: 200px; /* Largura mínima para os ícones */
+  min-width: 200px;
   box-sizing: border-box;
-  flex-grow: 0; /* Impede que as caixas cresçam */
+  flex-grow: 0;
 }
 
 .box-icone__titulo {
@@ -126,10 +122,9 @@ footer {
   color: #070505;
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 768px) {
   .box-wrapper {
-    min-width: 48%; /* Ajustando a largura mínima para 2 por linha */
+    min-width: 48%;
     padding: 1rem;
   }
 
@@ -141,11 +136,11 @@ footer {
 
 @media (max-width: 576px) {
   .icones {
-    gap: 20px; /* Ajustando o gap para telas pequenas */
+    gap: 20px;
   }
 
   .box-wrapper {
-    min-width: 100%; /* Um item por linha */
+    min-width: 100%;
   }
 
   .box-icone img {
@@ -153,5 +148,3 @@ footer {
     height: 100px;
   }
 }
-
-

@@ -1,3 +1,6 @@
+<script>
+</script>
+
 <!-- src/components/Footer.vue -->
 <template>
   <footer class="footer">
@@ -10,33 +13,29 @@
   </footer>
 </template>
 
-<script>
-// No <script setup>, você não precisa usar "export default"
-// O Vue já entende que isso é um componente
-</script>
-
 <style scoped>
 .footer {
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 0.1rem;
   background-image: url('../assets/layoutSocial.avif');
   border-radius: 20px;
+  position: fixed; /* Fixo no fundo */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
 }
 
-
-.footer p{
+.footer p {
+  margin-bottom: -1px;
   font-size: 14px;
   text-align: center;
 }
-
 
 .socialFeed img {
   max-width: 60px;
   max-height: 140px;
 }
-
-
 </style>

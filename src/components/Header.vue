@@ -1,28 +1,8 @@
-<template>
-        <header class="header">
-            <nav>
-                
-                  <h1>Luan Antunes Barbosa</h1>
-                  <button  class="btn-neu" @click="router.push('/')">Home</button>
-                  <button  class="btn-neu" @click="router.push('/feed')">Feed</button>
-                  <button  class="btn-neu" @click="router.push('/game')">Game</button>
-                  <button  class="btn-neu" @click="router.push('/register')"  v-if="!isLoggedIn && route.path !== '/feed'">Register</button>
-                  <button  class="btn-neu" @click="router.push('/sign-in')"   v-if="!isLoggedIn && route.path !== '/feed'">Login</button>
-                  <button  class="btn-neu" @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
-            </nav>
-            
-        </header>
-</template>
-
 <script setup>
 import { RouterView, useRouter } from 'vue-router';
 import { onMounted, ref } from 'vue';
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useRoute } from 'vue-router';
-
-
-
-
 
 const route = useRoute();
 const isLoggedIn = ref(false);
@@ -55,6 +35,25 @@ function feed(){
 }
 </script>
 
+
+<template>
+        <header class="header">
+            <nav>
+                  <!---->
+                  <h1>Luan Antunes Barbosa</h1>
+                  <!--<button  class="btn-neu" @click="router.push('/')">Home</button>-->
+                 <!--<button  class="btn-neu" @click="router.push('/game')">Game</button>-->
+                 <!--<button  class="btn-neu" @click="router.push('/git')" >Git</button>-->
+
+                  <button  class="btn-neu" @click="router.push('/feed')">Feed</button>
+                  <button class="btn-neu" @click="router.push('/register')" v-if="!isLoggedIn && !['/home', '/feed', '/game', '/git'].includes(route.path)">Register</button>
+                  <button class="btn-neu" @click="router.push('/sign-in')" v-if="!isLoggedIn && !['/home', '/feed', '/game', '/git'].includes(route.path)">Login</button>
+                  <button  class="btn-neu" @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
+            </nav>
+            
+        </header>
+</template>
+
 <style scoped>
 
 .btn-neu {
@@ -74,12 +73,14 @@ function feed(){
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);;
 }
 
- 
-
 .header {
   background-image: url('../assets/layout.avif');
-  color: white;
+  position: fixed; /* Fixo no topo */
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 1rem;
+  z-index: 10;
 }
 
 nav ul {
@@ -100,5 +101,10 @@ router-link {
 
 router-link:hover {
   text-decoration: underline;
+}
+
+nav button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 </style>

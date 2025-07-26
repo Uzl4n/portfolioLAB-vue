@@ -1,24 +1,34 @@
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { createRouter, createWebHashHistory } from "vue-router";
 
 const router = createRouter({
     history: createWebHashHistory(),
     routes: [
-        { path: "/",            component: () => import ("../views/Home.vue") },
-        { path: "/register",    component: () => import ("../views/Register.vue") },
-        { path: "/game",        component: () => import ("../views/Game.vue") },
-        { path: "/sign-in",     component: () => import ("../views/SignIn.vue") },
+        { path: "/",            component: () => import ("../views/Home.vue"),
+            meta:{
+                requiresAuth: true,
+            },
+        },
+        { path: "/game",        component: () => import ("../views/Game.vue"), 
+            meta:{
+                requiresAuth: true,
+            },
+        },
+        { path: "/git",        component: () => import ("../views/Git.vue"),
+            meta:{
+                requiresAuth: true,
+            },
+        },
         { path: "/feed",        
             component: () => import ("../views/Feed.vue"), 
-                meta:{
-                    requiresAuth: true,
-                },
+            meta:{
+                requiresAuth: true,
+            },
         },
-               
+        { path: "/register",    component: () => import ("../views/Register.vue") },
+        { path: "/sign-in",     component: () => import ("../views/SignIn.vue") },
     ],
 });
-
-/* Arrumar o Feed primeiro depois ok!
 
 const getCurrentUser = () => {
     return new Promise((resolve, reject) => {
@@ -48,7 +58,21 @@ router.beforeEach(async (to, from, next) => {
         next(); // deixa passar rotas públicas
     }
 });
-  */
 
+// Função para fazer o login com o Google
+const loginWithGoogle = async () => {
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+
+    try {
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        console.log("Usuário logado com Google:", user);
+    } catch (error) {
+        console.error("Erro ao fazer login com o Google:", error);
+    }
+};
+
+export { loginWithGoogle };
 
 export default router;

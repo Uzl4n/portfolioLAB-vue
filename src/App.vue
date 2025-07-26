@@ -1,12 +1,3 @@
-<!-- src/App.vue -->
-<template>
-  <div id="app">
-   
-    <router-view />
-    
-  </div>
-</template>
-
 <script>
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
@@ -24,13 +15,36 @@ export default {
 };
 </script>
 
+<template>
+  <div id="app">
+    <Header />
+    <div class="content">
+      <router-view />
+    </div>
+    <Footer />
+  </div>
+</template>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 80px; /* Ajuste para a altura do seu header */
+}
+
+footer {
+  margin-top: auto;
 }
 </style>

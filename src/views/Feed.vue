@@ -2,24 +2,19 @@
   import { ref } from 'vue';
   import { posts } from '../data/posts';
   import 'bootstrap/dist/css/bootstrap.min.css';
-  import 'bootstrap/dist/js/bootstrap.min.js';
+  import 'bootstrap/dist/js/bootstrap.bundle.min.js';  // Usar bootstrap.bundle.min.js
   import Header from "../components/Header.vue";
   import Footer from "../components/Footer.vue";
 
-const isPostUSA = ref(true); // Inicia exibindo a seção "postUSA"
+  const isPostUSA = ref(true); // Inicia exibindo a seção "postUSA"
 </script>
 
-
-
-<!--deve ficar no mesmo planto header e footer junto com home no caso eles estao em um acima --- ver essas linhas vermelhas ---- tirar um dos javas deixar so um!!-->
+<!-- TROCAR IMAGEM DOS JOGOS POR OUTRA E COLOCAR ALGO QUE FAÇA SENTIDO imagens do carrosel linkao outras coisas, melhor!!!!!  TIRAR OS BOTOES GIT E GAME E LINKAR NO CARROSEL E NELES APENAS HOME E FEED-->
 
 <template>
+  <Header />
   
-    <Header />
-    
-    
-    <section class="posts-section">
-  
+  <section class="posts-section">
     <div id="carouselPosts" class="carousel slide">
       
       <!-- Indicadores (bolinhas) -->
@@ -46,12 +41,9 @@ const isPostUSA = ref(true); // Inicia exibindo a seção "postUSA"
         >
           <div class="post-card">
             <h3>{{ post.titulo }}</h3>
-            <p><strong>Autor:</strong> {{ post.autor }} - <strong>Ano:</strong> {{ post.data }}</p>
-            <img
-              :src="post.imagem_post"
-              alt="Imagem do post"
-              style="max-width: 100%; height: auto"
-            />
+           <router-link :to="post.url">
+              <img :src="post.imagem_post" alt="Imagem do post" />
+            </router-link>
             <p>{{ post.texto }}</p>
             <p v-if="post.texto2">{{ post.texto2 }}</p>
             <iframe
@@ -85,39 +77,38 @@ const isPostUSA = ref(true); // Inicia exibindo a seção "postUSA"
         <span class="visually-hidden">Próximo</span>
       </button>
     </div>
-  
-</section>
+  </section>
+
+ 
 
 
-    <Footer />
-  
+  <Footer />
 </template>
-
 
 <style>
 
+/* .posts-section: Estilo para a seção principal onde está o carrossel */
 .posts-section {
-  display: flex;
-  justify-content: center; /* Centraliza o carrossel horizontalmente */
-  align-items: center; /* Centraliza o carrossel verticalmente */
+  display: flex; /* Aplica o modelo de layout Flexbox à seção, permitindo organizar os itens de maneira flexível */
+  justify-content: center; /* Centraliza o conteúdo do carrossel horizontalmente */
+  align-items: center; /* Centraliza o conteúdo do carrossel verticalmente */
   min-height: 100vh; /* Garante que a altura mínima da seção ocupe toda a altura da tela */
- 
 }
 
+/* #carouselPosts: Estilo do carrossel */
 #carouselPosts {
-  width: 80%; /* Ajuste conforme necessário */
-  max-width: 1200px; /* Limita o tamanho máximo para não ficar muito grande em telas grandes */
-  height: 500px; /* Ajuste a altura conforme necessário */
-  margin-left: 500px; /* Centraliza o carrossel no meio - ta no meio */ 
+  width: 100%; /* O carrossel ocupa toda a largura da tela */
+  max-width: 1200px; /* Limita a largura máxima do carrossel a 1200px */
+  height: 80vh; /* O carrossel ocupa 80% da altura da tela */
+  margin: 0 auto; /* Centraliza o carrossel horizontalmente */
+  position: relative; /* Para que os controles de navegação (anterior/proximo) fiquem no lugar certo, dentro do carrossel */
 }
 
-.carousel-inner {
-  height: 100%; /* Faz com que os itens do carrossel ocupem toda a altura */
-}
-
+/* .carousel-item img: Estilo da imagem dentro de cada item do carrossel */
 .carousel-item img {
-  height: 100%; /* A imagem ocupa toda a altura do item */
-  object-fit: cover; /* Garante que a imagem cubra o item sem distorcer */
+  max-height: 400px; /* Define a altura máxima das imagens como 400px */
+  object-fit: cover; /* Garante que as imagens preencham o espaço sem distorção, cortando se necessário para manter a proporção */
 }
+
 
 </style>
